@@ -1,0 +1,145 @@
+/* Footer Container */
+.footer {
+  width: 100%;
+  margin-top: 50px;
+  background-color: var(--card);
+  color: var(--head);
+  font-size: 14px;
+  font-family: 'Gloria Hallelujah';
+  padding: 50px 5vw 30px;
+  border-top: 1px solid var(--logo);
+  position: relative;
+  z-index: 10;
+}
+
+/* Flex layout for content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 30px;
+}
+
+/* Left section with logo + description */
+.footer-left {
+  max-width: 600px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Barrio', cursive;
+  font-size: 22px;
+  color: var(--head);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-logo .dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--type);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.footer-logo .brand {
+  color: var(--type);
+  letter-spacing: 2.5px;
+}
+
+.footer-left p {
+  color: var(--text);
+  font-family: 'Gloria Hallelujah';
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+/* Navigation links */
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  letter-spacing: 2.5px;
+  font-family: 'Gloria Hallelujah';
+}
+
+.footer-links a {
+  
+  color: var(--head);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--logo);
+}
+
+/* Social icons */
+.social-footer {
+  display: flex;
+  gap: 25px;
+  padding-top: 20px;
+}
+
+.social-footer a img {
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-footer a:hover img {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Footer bottom with copyright */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--logo);
+
+  padding-top: 20px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Pumping Heart Effect */
+.pumping-heart {
+  display: inline-block;
+  animation: pump 1s infinite;
+  transform-origin: center;
+}
+
+@keyframes pump {
+  0%, 50%, 100% { transform: scale(1); }
+  25%, 75% { transform: scale(1.2); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-left {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,201 @@
+.project-page-container {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background Layers (Nebula + StarField) */
+.project-page-container > *:first-child,
+.project-page-container > *:nth-child(2) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.project-page {
+  margin-top: 20px;
+  min-height: 100vh;
+  color: var(--head);
+  font-family: "Syne Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* keep above background */
+}
+
+/* Heading */
+.project-page-heading {
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Cute message */
+.scroll-message {
+  font-size: 1.2rem;
+  color: var(--text);
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  animation: floatMessage 2s infinite ease-in-out;
+}
+
+@keyframes floatMessage {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Cards container: STACK vertically */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+}
+
+/* Individual card */
+.project-card-full {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  position: relative;
+}
+
+.project-card-full:hover {
+  transform: translateY(-5px);
+}
+
+/* Project name center */
+.project-card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Status Badge */
+/* Status container */
+.project-status-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3rem;
+  gap: 6px;
+}
+
+/* Blinking dot */
+.project-status-dot .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #c22727;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+/* Text in red */
+.project-status-dot .status-text {
+  font-size: 0.9rem;
+  color: #de3535;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Dot blinking animation */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+
+/* Image left + Description right */
+.project-card-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Project Image */
+.project-card-image img {
+  width: 300px;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Description */
+.project-card-info {
+  color: var(--text);
+  font-family: "Delius";
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  flex: 1;
+}
+
+/* Icons */
+.project-card-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.project-card-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.project-card-icons img:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.project-card-info {
+  position: relative;
+  padding-bottom: 50px; /* space so text/icons don’t overlap button */
+}
+
+.visit-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.visit-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+

@@ -1,0 +1,249 @@
+.intro-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  z-index: 2;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* ==================== FLOATING EMOJIS ==================== */
+/* 🌌 Floating Emoji Bubbles */
+.emoji-bubble {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.85;
+  user-select: none;
+  z-index: 0;
+
+  /* Proper bubble look */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.207), rgba(255,255,255,0.05));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(222, 222, 222, 0.144);
+  backdrop-filter: blur(8px);
+
+  /* Floating + drifting animation */
+  animation: float 6s ease-in-out infinite, drift 10s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+/* Positions for each bubble */
+.emoji1 { left: 5%; top: 30%; animation-delay: 0s, 0s; }
+.emoji2 { right: 10%; top: 20%; animation-delay: 2s, 1s; }
+.emoji3 { left: 10%; bottom: 15%; animation-delay: 4s, 2s; }
+
+/* Up-down floating */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+/* Left-right drifting */
+@keyframes drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+/* Hover → bubble moves opposite + scales up */
+.emoji-bubble:hover {
+  transform: translate(-25px, 25px) scale(1.1);
+}
+
+/* Optional: Rotating emoji like your 🌍 */
+.rotate {
+  display: inline-block;
+  animation: spin 8s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/*-----IntroCards-----*/
+.intro-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 20px;
+  border: var(--text);
+  padding: 3rem 2rem;
+  max-width: 950px;
+  width: 100%;
+  text-align: center;
+  color: var(--text);
+  font-family: 'fira-mono-regular';
+  box-shadow: var(--bg);
+  overflow: hidden;
+}
+
+/* ==================== FUTURISTIC INTRO ==================== */
+.holo-intro {
+  margin-bottom: 1.5rem;
+  font-family: "Syne Mono";
+  font-weight: 200;
+}
+
+
+.ufo {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 2.5rem;
+  animation: ufoFly 4s ease-in-out infinite;
+  position: relative;
+}
+
+/* UFO floating + zigzag animation */
+@keyframes ufoFly {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(15px, -10px) rotate(-5deg); }
+  50% { transform: translate(30px, 0px) rotate(5deg); }
+  75% { transform: translate(15px, 10px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Small Typing Line (Meet the Captain...) */
+.typing-line {
+  font-size: 0.95rem;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+  color: var(--type);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: var(--typebo);
+  animation: typing 4.5s steps(30, end) forwards, blink 1.2s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 20ch } /* Adjust to match text length */
+}
+
+@keyframes blink {
+  0%, 50% { border-color: var(--type); }
+  50.01%, 100% { border-color: transparent; }
+}
+
+/* Large Futuristic Name */
+.futuristic-name {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+  color: var(--head);
+  text-shadow: var(--typeshao);
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+  animation-delay: 3.5s; /* Shows after typing ends */
+}
+
+.futuristic-name span {
+  color: var(--name);
+  text-shadow: var(--namesho);
+}
+
+/* Subtitle (Full Stack Developer...) */
+.subtitle {
+  font-family: "Syne Mono";
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 4.5s;
+  color: var(--head);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ==================== PROFILE IMAGE ==================== */
+.intro-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.intro-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  animation: pulse 3s infinite ease-in-out;
+  box-shadow: var(--text);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* ==================== DESCRIPTION ==================== */
+.intro-text {
+  font-size: 1.15rem;
+  font-family: "Delius";
+  letter-spacing: 1.5px;  
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.85;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+  .intro-card {
+    padding: 2rem 1.2rem;
+  }
+  .futuristic-name { font-size: 1.8rem; }
+  .subtitle { font-size: 1rem; }
+  .intro-image { width: 110px; height: 110px; }
+  .emoji-bubble { font-size: 1.8rem; }
+}
+.intro-contact-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-heading {
+  font-size: 1.8rem;
+  font-family: "Syne Mono";
+  border-radius: 15px;
+  color: var(--text); /* adjust based on your theme */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.intro-contact-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 50px; /* space between each icon */
+}
+
+.intro-contact-icons img {
+  width: 45px;
+  height: 45px;
+  transition: 0.3s ease;
+  border-radius: 15px;
+  cursor: pointer;
+
+  /* subtle floating shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.intro-contact-icons img:hover {
+  transform: scale(1.15);
+
+  /* brighter shadow on hover for glowing effect */
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}

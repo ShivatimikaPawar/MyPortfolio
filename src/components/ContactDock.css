@@ -1,0 +1,106 @@
+.contact-dock {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.contact-card {
+  position: relative;
+  background: var(--card);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  color: var(--text);
+  font-family: 'fira-mono-regular', monospace;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.contact-title {
+  font-size: 2.2rem;
+  font-family: "Syne Mono", monospace;
+  color: var(--head);
+  text-shadow: var(--typeshao);
+  margin-bottom: 1rem;
+}
+
+.contact-titlee{
+  margin-top: 0px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  background: rgba(118, 121, 126, 0.207);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+  font-family: 'Syne Mono', monospace;
+  transition: background 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ffffff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+  backdrop-filter: blur(8px); /* blur behind the button */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--logo);
+  padding: 14px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: 'Orbitron', monospace;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 40px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-form button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+

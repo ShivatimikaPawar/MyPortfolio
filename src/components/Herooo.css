@@ -1,0 +1,192 @@
+/* Hero.css */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  left: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 90;
+  z-index: 0;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-rocket {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Rubik Puddles';
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-shadow: 0 0 20px rgba(136, 136, 255, 0.7);
+  opacity: 1 !important; /* Ensure always visible */
+  transform: none !important; /* Override parallax if needed */
+}
+
+.hero-subtitle {
+  font-family: 'DynaPuff';
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(165, 165, 255, 0.5);
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.launch-btn {
+  font-family: 'Caveat Brush', cursive;
+  background: linear-gradient(135deg, #fffece 0%, #ffebbb 50%, #fffebb 100%);
+  color: rgb(107, 161, 255);
+  border: none;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 
+    0 4px 15px rgba(255, 226, 34, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 0 2px rgba(255, 244, 34, 0.2);
+  opacity: 1 !important;
+  transform: none !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.launch-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffd0f3 0%, #ffe0f6 50%, #f9c1eb 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.launch-btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 
+    0 7px 20px rgba(34, 111, 255, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 2px rgba(34, 111, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.launch-btn:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 
+    0 2px 10px rgba(34, 111, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 0 2px rgba(34, 111, 255, 0.2);
+}
+
+.launch-btn:hover::before {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(109, 155, 254, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(109, 155, 254, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(109, 155, 254, 0);
+  }
+}
+
+/* Add a subtle shine effect */
+.launch-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.13);
+  transform: rotate(30deg);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.launch-btn:hover::after {
+  left: 120%;
+}
+
+.launch-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(170, 201, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-rocket {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .launch-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Add this to Hero.css or StarField.css */
+.shooting-stars canvas {
+  animation: shootStars 1.5s ease forwards;
+}
+
+@keyframes shootStars {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(200px); opacity: 0; }
+}
+
+
+
+

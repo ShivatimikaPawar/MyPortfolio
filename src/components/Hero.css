@@ -1,0 +1,222 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herocontainer{
+  position: absolute;
+  width: 1000px;
+  display: flex;
+  padding: 20px 0;
+  flex-direction: column;
+  justify-content: center; 
+  gap: 10px; 
+}
+
+/* Left text */
+.hero-text {
+  z-index: 10;
+  left: 40px;
+  color: white;
+  max-width: 550px;
+}
+
+.hero-text h1{
+  font-size: 24px;
+  letter-spacing: 14px;
+  font-family: 'Syne Mono';
+  margin-bottom: 0;
+}
+
+.hero-text h2{
+  margin-top: 0;
+  font-size: 64px;
+  font-family: 'Barrio';
+  margin-bottom: 10px;
+}
+
+.hero-text P{
+  margin-top: 0;
+  font-size: 22px;
+  letter-spacing: 5px;
+  font-family: 'Syne Mono';
+  margin-bottom: 0;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 1rem;
+}
+
+.btnn {
+  border: none;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;background: var(--shbg);
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.btnn:hover::before {
+  opacity: 1;
+  transform: scale(0.5);
+}
+
+.btnn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+
+/* Scene container */
+.hero-scene {
+  z-index: 10;
+  right: 40px;
+  color: white;
+  max-width: 550px;
+}
+
+/* Big planet1 */
+.planet1 {
+  position: absolute;
+  right: -15%;
+  top: -40%;
+  width: 57%;
+  opacity: 0.4;
+  animation: planet2Float 96s ease-in-out infinite alternate, rotate 90s linear infinite;
+}
+
+@keyframes planet1Move {
+  0% { transform: translate(-20%, -60%) rotate(0deg); }
+  50% { transform: translate(120%, -40%) rotate(180deg); }
+  100% { transform: translate(-20%, -60%) rotate(360deg); }
+}
+
+
+/* Small Planets */
+.small {
+  position: absolute;
+  width: 5%;
+  opacity: 0.6;
+  animation: rotate 50s linear infinite;
+}
+.small:nth-child(2) { top: 15%; left: 45%; }
+
+
+/* Astronaut */
+.rocket-container {
+  position: absolute;
+  right: 10px;
+  top: 62%;
+  transform: translateY(-50%);
+  animation: floatAstronaut 6s ease-in-out infinite;
+}
+.rocket {
+  width: 400px;
+}
+@keyframes floatAstronaut {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-55%) translateX(10px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
+
+/* Rotate effect for planets */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hero-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+   .rocket-container{
+    width: 30%;
+    right: 0;
+  }
+  
+  .rocket{
+    margin-right: 5%;
+    right: 0;
+  }
+
+  .herocontainer {
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-text, .hero-scene {
+    max-width: 100%;
+  }
+
+  .hero-scene {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rocket-container{
+    top: 80%;
+    width: 60%;
+    right: 0;
+  }
+  
+  .rocket{
+    width: 110%;
+    margin-right: 35%;
+    right: 0;
+  }
+
+ 
+  .small {
+    right: 10px;
+    width: 20%;
+  }
+
+  .planet1 {
+    display: none;
+  }
+
+  .hero-text h1 { font-size: 16px; letter-spacing: 8px; }
+  .hero-text h2 { font-size: 32px; }
+  .hero-text p { font-size: 16px; letter-spacing: 3px; }
+}
+

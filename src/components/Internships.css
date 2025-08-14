@@ -1,0 +1,161 @@
+.internship-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 6rem 1.5rem;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.internship-card {
+  position: relative;
+  background: var(--card);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  max-width: 950px;
+  width: 100%;
+  color: var(--text);
+  font-family: 'fira-mono-regular';
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-family: "Syne Mono";
+  color: var(--head);
+  text-shadow: var(--typeshao);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-family: "Syne Mono";
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 1.5rem; /* Space for the line */
+  border-left: 2px solid var(--name);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem; /* Align content with line */
+  margin-bottom: 2rem;
+}
+
+/* Add the timeline dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem; /* Adjust to align with line */
+  top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--name);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--name);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  display: flex;
+}
+
+.timeline-marker {
+  position: relative;
+  width: 70px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -29px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Font fallbacks */
+.internship-card {
+  font-family: 'Fira Mono', monospace, sans-serif;
+}
+
+.section-title, .section-subtitle {
+  font-family: 'Syne', sans-serif;
+}
+
+.year {
+  font-weight: bold;
+  color: var(--name);
+  font-size: 1.1rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.role {
+  font-size: 0.95rem;
+  color: var(--border);
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 1.5rem;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--type);
+  margin-bottom: 0.5rem;
+}
+
+.duration svg {
+  width: 16px;
+  height: 16px;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .internship-card {
+    padding: 2rem 1rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .year {
+    font-size: 1rem;
+  }
+  .company {
+    font-size: 1rem;
+  }
+}
+
+
+
