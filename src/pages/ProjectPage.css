@@ -165,41 +165,45 @@
 /* Responsive */
 @media (max-width: 768px) {
   .project-card-content {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .project-card-image img {
-    width: 50%; /* scale image down to fit */
-    max-width: 200px; /* limit max size */
+    width: 90%;           /* takes most of the container width */
+    max-width: 300px;     /* but not more than this */
     height: auto;
   }
 
   .project-card-info {
     word-break: break-word;
-    max-width: 80%;
-    font-size: 16px; /* slightly smaller text for mobile */
-    padding-bottom: 60px; /* ensure space for visit button */
+    max-width: 90%;       /* prevent overflow */
+    font-size: 16px;
+    padding-bottom: 60px;
+  }
+
+  .project-card-full {
+    padding: 1.5rem 1rem;
+    width: 95%;            /* keep inside screen on small devices */
+    box-sizing: border-box;
+  }
+
+  .project-card-title {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .project-card-icons {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .visit-button {
     position: static;
     margin-top: 1rem;
   }
-
-  .project-card-icons {
-    justify-content: center;
-  }
-
-  .project-card-title {
-    font-size: 1.5rem;
-  }
-
-  .project-card-full {
-    padding: 1.5rem 1rem;
-  }
 }
-
-
-
