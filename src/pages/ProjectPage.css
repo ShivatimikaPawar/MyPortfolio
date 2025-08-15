@@ -171,12 +171,14 @@
   }
 
   .project-card-image img {
-    width: 90%; /* scale image down to fit */
-    max-width: 280px; /* limit max size */
+    width: 50%; /* scale image down to fit */
+    max-width: 200px; /* limit max size */
     height: auto;
   }
 
   .project-card-info {
+    word-break: break-word;
+    max-width: 80%;
     font-size: 16px; /* slightly smaller text for mobile */
     padding-bottom: 60px; /* ensure space for visit button */
   }
