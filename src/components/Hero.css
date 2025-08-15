@@ -163,6 +163,7 @@
    .rocket-container{
     width: 30%;
     right: 0;
+    
   }
   
   .rocket{
@@ -194,21 +195,22 @@
   }
 
   .rocket-container{
-    top: 80%;
+    top: 100%;
     width: 60%;
     right: 0;
+    bottom: 0;
   }
   
   .rocket{
     width: 110%;
     margin-right: 35%;
-    right: 0;
   }
 
  
   .small {
     right: 10px;
     width: 20%;
+    opacity: 0.4;
   }
 
   .planet1 {
@@ -216,7 +218,7 @@
   }
 
   .hero-text h1 { font-size: 16px; letter-spacing: 8px; }
-  .hero-text h2 { font-size: 32px; }
-  .hero-text p { font-size: 16px; letter-spacing: 3px; }
+  .hero-text h2 { font-size: 30px; }
+  .hero-text p { font-size: 12px; letter-spacing: 3px; }
 }
 
