@@ -21,9 +21,7 @@ const projects = [
     image: "/portt.png",
     description:
       "A fully responsive portfolio designed from scratch to showcase my work and personality. Includes custom scroll animations, interactive contact form with backend email integration, and light/dark themes. Built a full-stack contact form using Node.js and Gmail SMTP, Created GSAP-powered parallax effects for nebula background.",
-    github: "https://github.com/ShivatimikaPawar/Breezo",
-    demo: "https://www.linkedin.com/in/shivatimika/overlay/1753374419833/single-media-viewer/?",
-    Link: "https://breezoooo.netlify.app/",
+    Link: "https://myportfolioooo.onrender.com/",
   },
 
   {
